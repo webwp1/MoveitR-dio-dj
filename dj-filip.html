@@ -68,7 +68,7 @@
         }
 
         .top-nav a:hover { color: var(--secondary); }
-        .top-nav a.active { color: var(--secondary); border-bottom: 2px solid var(--secondary); }
+        .top-nav a.active { color: var(--secondary); }
 
         /* --- POZADÍ --- */
         .bg-animate {
@@ -81,6 +81,7 @@
 
         .main-wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; }
 
+        /* --- KARTA --- */
         .work-card {
             background: var(--glass);
             border: 2px solid var(--border-glass);
@@ -91,7 +92,6 @@
             width: 100%;
             max-width: 600px;
             box-shadow: 0 40px 100px var(--card-shadow);
-            position: relative;
         }
 
         .icon-pulse {
@@ -158,6 +158,7 @@
             transform: translateY(-3px);
         }
 
+        /* --- PŘEPÍNAČ --- */
         .theme-toggle { 
             position: fixed; 
             top: 80px; 
@@ -175,11 +176,13 @@
             backdrop-filter: blur(10px); 
         }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-glass); margin-top: auto; }
-        footer p { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(150,150,150,0.5); }
+        /* --- FOOTER (Opravený) --- */
+        footer { padding: 30px; text-align: center; border-top: 1px solid var(--border-glass); margin-top: auto; }
+        footer p { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
         @media (max-width: 600px) {
             .theme-toggle { top: 75px; right: 10px; }
+            .top-nav { gap: 15px; }
         }
     </style>
 </head>
@@ -208,7 +211,7 @@
     </div>
 
     <footer>
-        <p>POWERED BY MARTIN © 2026</p>
+        <p>POWERED BY <a href="https://sites.google.com/view/martin-weby/web" target="_blank" style="color:var(--secondary); text-decoration:none;">MARTIN</a> © 2026</p>
     </footer>
 
     <script>
@@ -227,6 +230,7 @@
             }
         });
 
+        // Kontrola uloženého tématu při startu
         if (localStorage.getItem('theme') === 'light') {
             document.body.setAttribute('data-theme', 'light');
             themeIcon.className = 'fas fa-sun';
