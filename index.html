@@ -10,32 +10,8 @@
     <link rel="shortcut icon" type="image/png" href="https://lh3.googleusercontent.com/d/0">
     <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/0">
 
-    <meta name="description" content="Moveit Rádio – tvoja vlna energie! Počúvaj najlepšie tanečné mixy, sleduj live show s DJ Filipom a uži si poriadnu dávku hudby online 24/7.">
-    <meta name="keywords" content="Moveit Rádio, online rádio, tanečná hudba, DJ Filip, live stream rádio, slovenské rádio, dance mix">
-    <meta name="author" content="Moveit Rádio">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Moveit Rádio – tvoja vlna energie! Počúvaj najlepšie tanečné mixy, sleduj live show s DJ Filipom.">
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Moveit Rádio | Žij hudbou 2026">
-    <meta property="og:description" content="Tvoja vlna energie! Počúvaj najlepšie tanečné hity a live show s DJ Filipom.">
-    <meta property="og:image" content="https://lh3.googleusercontent.com/d/0"> 
-    <meta property="og:url" content="https://moveitradio.sk/">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RadioStation",
-      "name": "Moveit Rádio",
-      "url": "https://moveitradio.sk/",
-      "logo": "https://lh3.googleusercontent.com/d/0",
-      "description": "Slovenská internetová rozhlasová stanica zameraná na tanečnú hudba a live mixy.",
-      "sameAs": [
-        "https://www.instagram.com/moveitradio_sk",
-        "https://www.tiktok.com/@moveitradio_sk"
-      ]
-    }
-    </script>
-
     <script>
         (function() {
             const saved = localStorage.getItem('theme');
@@ -149,34 +125,23 @@
         .playing #playBtn { background: var(--accent); color: #fff; }
 
         .vol-wrap { display: flex; align-items: center; gap: 12px; width: 200px; margin: 10px auto 0; opacity: 0.5; }
-        .vol-wrap:hover { opacity: 1; }
         input[type=range] { flex: 1; cursor: pointer; accent-color: var(--secondary); height: 4px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1100px; padding-bottom: 40px; }
         .card { background: var(--glass); border: 1px solid var(--border-glass); padding: 35px; border-radius: 35px; }
         .card h2 { font-size: 1rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; color: var(--secondary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
-        .big-text { font-size: 1.6rem; font-weight: 900; display: block; color: var(--text-main); margin: 5px 0; line-height: 1.2; }
-        .accent-text { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        .big-text { font-size: 1.6rem; font-weight: 900; color: var(--text-main); display: block; margin: 5px 0; }
+        .accent-text { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
 
-        .sponsor-section { width: 100%; max-width: 1100px; margin-bottom: 40px; }
-        .sponsor-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 30px; border-radius: 35px; text-align: center; }
-        .sponsor-img { width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-top: 15px; display: inline-block; }
+        .sponsor-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 30px; border-radius: 35px; text-align: center; width: 100%; max-width: 1100px; }
+        .sponsor-img { width: 100%; max-width: 450px; border-radius: 20px; margin-top: 15px; }
 
         .soc-row { display: flex; gap: 12px; margin-top: 25px; }
         .soc-item { width: 50px; height: 50px; border-radius: 12px; background: var(--text-main); display: flex; align-items: center; justify-content: center; color: var(--bg-dark); text-decoration: none; font-size: 1.4rem; }
-        .soc-item:hover { transform: scale(1.1); background: var(--secondary); }
 
-        .theme-toggle { position: fixed; top: 80px; right: 20px; z-index: 1000; background: var(--glass); border: 1px solid var(--border-glass); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); }
+        .theme-toggle { position: fixed; top: 80px; right: 20px; z-index: 1000; background: var(--glass); border: 1px solid var(--border-glass); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-        footer { padding: 30px; text-align: center; border-top: 1px solid var(--border-glass); margin-top: auto; }
-        footer p { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-
-        @media (max-width: 600px) {
-            .main-wrapper { padding: 20px 15px; }
-            h1 { font-size: 3.5rem; }
-            .player-card { padding: 40px 20px; }
-            .theme-toggle { top: 75px; right: 10px; }
-        }
+        footer { padding: 30px; text-align: center; border-top: 1px solid var(--border-glass); margin-top: auto; color: rgba(255,255,255,0.3); font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; }
     </style>
 </head>
 <body id="mainBody">
@@ -205,12 +170,12 @@
             </div>
 
             <div class="play-outer">
-                <button id="playBtn" aria-label="Prehrať rádio"><i class="fas fa-play" id="playIcon"></i></button>
+                <button id="playBtn"><i class="fas fa-play" id="playIcon"></i></button>
             </div>
 
             <div class="vol-wrap">
                 <i class="fas fa-volume-down"></i>
-                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8" aria-label="Hlasitosť">
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
                 <i class="fas fa-volume-up"></i>
             </div>
         </section>
@@ -220,122 +185,94 @@
                 <h2><i class="fas fa-compact-disc"></i> PROGRAM</h2>
                 <p class="accent-text">Každý piatok:</p>
                 <span class="big-text">Večerná zábava s DJ Filipom</span>
-                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 5px;">20:00 — 22:00 | LIVE DANCE MIX</p>
             </div>
-
             <div class="card">
                 <h2><i class="fas fa-bolt"></i> EXTRA SHOW</h2>
                 <p class="accent-text">Oficiálne vysielanie:</p>
                 <span class="big-text">Denná zábava s DJ Filipom</span>
-                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 5px;">Podľa aktuálnej nálady a energie</p>
             </div>
-
             <div class="card">
                 <h2><i class="fas fa-share-nodes"></i> SLEDUJ NÁS</h2>
                 <div class="soc-row">
-                    <a href="https://www.instagram.com/moveitradio_sk" class="soc-item" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@moveitradio_sk" class="soc-item" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/moveitradio_sk" class="soc-item" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@moveitradio_sk" class="soc-item" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
 
-        <section class="sponsor-section">
-            <div class="sponsor-card">
-                <h2><i class="fas fa-star"></i> OFICIÁLNY PARTNER</h2>
-                <a href="https://www.print-up.at/" target="_blank">
-                    <img src="https://lh3.googleusercontent.com/d/1eR0l1OLGVqhNxwRYDLMouGSFq1HouRVa" 
-                         alt="Partner Print-Up.at" 
-                         class="sponsor-img" 
-                         onerror="this.src='https://via.placeholder.com/450x150/111/fff?text=PRINT-UP.AT'">
-                </a>
-            </div>
-        </section>
+        <div class="sponsor-card">
+            <h2><i class="fas fa-star"></i> OFICIÁLNY PARTNER</h2>
+            <a href="https://www.print-up.at/" target="_blank">
+                <img src="https://lh3.googleusercontent.com/d/1eR0l1OLGVqhNxwRYDLMouGSFq1HouRVa" alt="Partner" class="sponsor-img">
+            </a>
+        </div>
     </div>
 
     <footer>
-        <p>POWERED BY <a href="https://sites.google.com/view/martin-weby/web" target="_blank" style="color:var(--secondary); text-decoration:none;">MARTIN</a> © 2026</p>
+        POWERED BY <a href="https://sites.google.com/view/martin-weby/web" target="_blank" style="color:var(--secondary); text-decoration:none;">MARTIN</a> © 2026
     </footer>
 
-    <audio id="radioAudio" src="https://stream.zeno.fm/jkrusgbmbtcvv" preload="none"></audio>
+    <audio id="radioAudio" preload="none"></audio>
 
     <script>
         const body = document.getElementById('mainBody');
         const audio = document.getElementById('radioAudio');
         const playBtn = document.getElementById('playBtn');
         const playIcon = document.getElementById('playIcon');
-        const playerContainer = document.getElementById('playerContainer');
-        const trackTitle = document.getElementById('track-title');
-        const trackArtist = document.getElementById('track-artist');
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        
-        function updateThemeUI() {
-            if (document.documentElement.getAttribute('data-theme') === 'light' || body.getAttribute('data-theme') === 'light') {
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-            }
-        }
+        const trackTitle = document.getElementById('track-title');
+        const trackArtist = document.getElementById('track-artist');
 
+        // --- TÉMA ---
+        function updateThemeUI() {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+        }
         updateThemeUI();
 
         themeToggle.addEventListener('click', () => {
-            if (body.getAttribute('data-theme') === 'light') {
-                body.removeAttribute('data-theme');
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            if (isLight) {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
             } else {
-                body.setAttribute('data-theme', 'light');
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
             }
             updateThemeUI();
         });
 
+        // --- RÁDIO ---
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
-                audio.src = "https://stream.zeno.fm/jkrusgbmbtcvv"; 
+                audio.src = "https://stream.zeno.fm/jkrusgbmbtcvv";
                 audio.play();
                 playIcon.className = 'fas fa-pause';
-                playerContainer.classList.add('playing');
+                document.getElementById('playerContainer').classList.add('playing');
             } else {
                 audio.pause();
-                audio.src = ""; 
+                audio.src = "";
                 playIcon.className = 'fas fa-play';
-                playerContainer.classList.remove('playing');
+                document.getElementById('playerContainer').classList.remove('playing');
             }
         });
 
         document.getElementById('volume').addEventListener('input', (e) => audio.volume = e.target.value);
 
-        let currentFullTitle = "";
-        function subscribeToMetadata() {
-            const eventSource = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
-            eventSource.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                if (data.streamTitle && data.streamTitle !== currentFullTitle) {
-                    currentFullTitle = data.streamTitle;
+        // --- METADATA ---
+        function subscribeMetadata() {
+            const es = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
+            es.onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                if (data.streamTitle) {
                     const parts = data.streamTitle.split(' - ');
-                    const artist = (parts[0] || "MOVEIT RÁDIO").toUpperCase();
-                    const title = (parts[1] || parts[0]).toUpperCase();
-                    
-                    trackTitle.style.opacity = 0;
-                    trackArtist.style.opacity = 0;
-                    
-                    setTimeout(() => {
-                        trackArtist.innerText = artist;
-                        trackTitle.innerHTML = title + `<div class="visualizer-inline"><div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div></div>`;
-                        trackTitle.style.opacity = 1;
-                        trackArtist.style.opacity = 1;
-                    }, 300);
+                    trackArtist.innerText = (parts[0] || "MOVEIT RÁDIO").toUpperCase();
+                    trackTitle.innerHTML = (parts[1] || parts[0]).toUpperCase() + `<div class="visualizer-inline"><div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div></div>`;
                 }
             };
-            eventSource.onerror = () => {
-                eventSource.close();
-                setTimeout(subscribeToMetadata, 5000);
-            };
         }
-        subscribeToMetadata();
+        subscribeMetadata();
     </script>
 </body>
 </html>
