@@ -68,7 +68,7 @@
             overflow-x: hidden;
         }
 
-        /* TVOJE NOVÉ MENU */
+        /* MENU STYLE */
         .top-nav {
             width: 100%; background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-glass); padding: 15px 20px; position: sticky; top: 0;
@@ -150,33 +150,24 @@
         .vol-wrap:hover { opacity: 1; }
         input[type=range] { flex: 1; cursor: pointer; accent-color: var(--secondary); height: 4px; }
 
-        .grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
-            width: 100%; max-width: 1100px; padding-bottom: 40px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1100px; padding-bottom: 40px; }
         .card { background: var(--glass); border: 1px solid var(--border-glass); padding: 35px; border-radius: 35px; }
         .card h2 { font-size: 1rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; color: var(--secondary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
         .big-text { font-size: 1.6rem; font-weight: 900; display: block; color: var(--text-main); margin: 5px 0; line-height: 1.2; }
         .accent-text { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
 
-        .sponsor-section { width: 100%; max-width: 1100px; margin-bottom: 40px; }
-        .sponsor-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 30px; border-radius: 35px; text-align: center; }
+        .sponsor-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 30px; border-radius: 35px; text-align: center; width: 100%; max-width: 1100px; }
         .sponsor-img { width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-top: 15px; display: inline-block; }
 
         .soc-row { display: flex; gap: 12px; margin-top: 25px; }
         .soc-item { width: 50px; height: 50px; border-radius: 12px; background: var(--text-main); display: flex; align-items: center; justify-content: center; color: var(--bg-dark); text-decoration: none; font-size: 1.4rem; }
-        .soc-item:hover { transform: scale(1.1); background: var(--secondary); }
 
         .theme-toggle { position: fixed; top: 80px; right: 20px; z-index: 1000; background: var(--glass); border: 1px solid var(--border-glass); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); }
 
         footer { padding: 30px; text-align: center; border-top: 1px solid var(--border-glass); margin-top: auto; }
         footer p { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
-        @media (max-width: 600px) {
-            .main-wrapper { padding: 40px 15px; }
-            h1 { font-size: 3.5rem; }
-            .player-card { padding: 40px 20px; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 3.5rem; } }
     </style>
 </head>
 <body>
@@ -211,7 +202,7 @@
 
             <div class="vol-wrap">
                 <i class="fas fa-volume-down"></i>
-                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8" aria-label="Hlasitosť">
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
                 <i class="fas fa-volume-up"></i>
             </div>
         </section>
@@ -228,26 +219,24 @@
                 <h2><i class="fas fa-bolt"></i> EXTRA SHOW</h2>
                 <p class="accent-text">Oficiálne vysielanie:</p>
                 <span class="big-text">Denná zábava s DJ Filipom</span>
-                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 5px;">Podľa aktuálnej nálady a energie</p>
+                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 5px;">Podľa aktuálnej nálady</p>
             </div>
 
             <div class="card">
                 <h2><i class="fas fa-share-nodes"></i> SLEDUJ NÁS</h2>
                 <div class="soc-row">
-                    <a href="https://www.instagram.com/moveitradio_sk" class="soc-item" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@moveitradio_sk" class="soc-item" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/moveitradio_sk" class="soc-item" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@moveitradio_sk" class="soc-item" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
 
-        <section class="sponsor-section">
-            <div class="sponsor-card">
-                <h2><i class="fas fa-star"></i> OFICIÁLNY PARTNER</h2>
-                <a href="https://www.print-up.at/" target="_blank">
-                    <img src="https://lh3.googleusercontent.com/d/1eR0l1OLGVqhNxwRYDLMouGSFq1HouRVa" alt="Partner Print-Up.at" class="sponsor-img">
-                </a>
-            </div>
-        </section>
+        <div class="sponsor-card">
+            <h2><i class="fas fa-star"></i> OFICIÁLNY PARTNER</h2>
+            <a href="https://www.print-up.at/" target="_blank">
+                <img src="https://lh3.googleusercontent.com/d/1eR0l1OLGVqhNxwRYDLMouGSFq1HouRVa" alt="Partner" class="sponsor-img">
+            </a>
+        </div>
     </div>
 
     <footer>
@@ -261,19 +250,17 @@
         const playBtn = document.getElementById('playBtn');
         const playIcon = document.getElementById('playIcon');
         const playerContainer = document.getElementById('playerContainer');
-        const trackTitle = document.getElementById('track-title');
-        const trackArtist = document.getElementById('track-artist');
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        
+        const trackTitle = document.getElementById('track-title');
+        const trackArtist = document.getElementById('track-artist');
+
         themeToggle.addEventListener('click', () => {
             if (document.body.getAttribute('data-theme') === 'light') {
                 document.body.removeAttribute('data-theme');
-                document.documentElement.removeAttribute('data-theme');
                 themeIcon.className = 'fas fa-moon';
             } else {
                 document.body.setAttribute('data-theme', 'light');
-                document.documentElement.setAttribute('data-theme', 'light');
                 themeIcon.className = 'fas fa-sun';
             }
         });
@@ -281,7 +268,7 @@
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.src = "https://stream.zeno.fm/jkrusgbmbtcvv"; 
-                audio.play().catch(error => console.log("Chyba:", error));
+                audio.play();
                 playIcon.className = 'fas fa-pause';
                 playerContainer.classList.add('playing');
             } else {
@@ -294,34 +281,19 @@
 
         document.getElementById('volume').addEventListener('input', (e) => audio.volume = e.target.value);
 
-        let currentFullTitle = "";
-        function subscribeToMetadata() {
-            const eventSource = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
-            eventSource.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                if (data.streamTitle && data.streamTitle !== currentFullTitle) {
-                    currentFullTitle = data.streamTitle;
+        function subscribe() {
+            const es = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
+            es.onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                if (data.streamTitle) {
                     const parts = data.streamTitle.split(' - ');
-                    const artist = (parts[0] || "MOVEIT RÁDIO").toUpperCase();
-                    const title = (parts[1] || parts[0]).toUpperCase();
-                    
-                    trackTitle.style.opacity = 0;
-                    trackArtist.style.opacity = 0;
-                    
-                    setTimeout(() => {
-                        trackArtist.innerText = artist;
-                        trackTitle.innerHTML = title + `<div class="visualizer-inline"><div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div></div>`;
-                        trackTitle.style.opacity = 1;
-                        trackArtist.style.opacity = 1;
-                    }, 300);
+                    trackArtist.innerText = (parts[0] || "MOVEIT RÁDIO").toUpperCase();
+                    trackTitle.innerHTML = (parts[1] || parts[0]).toUpperCase() + `<div class="visualizer-inline"><div class="vis-bar"></div><div class="vis-bar"></div><div class="vis-bar"></div></div>`;
                 }
             };
-            eventSource.onerror = () => {
-                eventSource.close();
-                setTimeout(subscribeToMetadata, 5000);
-            };
+            es.onerror = () => { es.close(); setTimeout(subscribe, 5000); };
         }
-        subscribeToMetadata();
+        subscribe();
     </script>
 </body>
 </html>
