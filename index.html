@@ -7,6 +7,8 @@
     <title>Moveit Rádio | Žij hudbou 2026 – Tvoja online vlna energie</title>
     
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/0">
+    <link rel="shortcut icon" type="image/png" href="https://lh3.googleusercontent.com/d/0">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/0">
 
     <meta name="description" content="Moveit Rádio – tvoja vlna energie! Počúvaj najlepšie tanečné mixy, sleduj live show s DJ Filipom a uži si poriadnu dávku hudby online 24/7.">
     <meta name="keywords" content="Moveit Rádio, online rádio, tanečná hudba, DJ Filip, live stream rádio, slovenské rádio, dance mix">
@@ -267,9 +269,7 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
-        // --- TÉMA ---
         function updateThemeUI() {
-            // Kontrola či je téma nastavená na light
             if (document.documentElement.getAttribute('data-theme') === 'light' || body.getAttribute('data-theme') === 'light') {
                 themeIcon.className = 'fas fa-sun';
             } else {
@@ -277,7 +277,6 @@
             }
         }
 
-        // SPRAVNÁ SYNCHRONIZÁCIA HNEĎ PO NAČÍTANÍ
         updateThemeUI();
 
         themeToggle.addEventListener('click', () => {
@@ -293,7 +292,6 @@
             updateThemeUI();
         });
 
-        // --- AUDIO ---
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.src = "https://stream.zeno.fm/jkrusgbmbtcvv"; 
@@ -310,7 +308,6 @@
 
         document.getElementById('volume').addEventListener('input', (e) => audio.volume = e.target.value);
 
-        // --- METADATA ---
         let currentFullTitle = "";
         function subscribeToMetadata() {
             const eventSource = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
