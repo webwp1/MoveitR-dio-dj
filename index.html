@@ -6,7 +6,7 @@
     
     <title>Moveit Rádio | Žij hudbou 2026 – Tvoja online vlna energie</title>
     
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1iuStY2ljPhULgoZQXEHAAYlBAW-3tneg">
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/0">
 
     <meta name="description" content="Moveit Rádio – tvoja vlna energie! Počúvaj najlepšie tanečné mixy, sleduj live show s DJ Filipom a uži si poriadnu dávku hudby online 24/7.">
     <meta name="keywords" content="Moveit Rádio, online rádio, tanečná hudba, DJ Filip, live stream rádio, slovenské rádio, dance mix">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Moveit Rádio | Žij hudbou 2026">
     <meta property="og:description" content="Tvoja vlna energie! Počúvaj najlepšie tanečné hity a live show s DJ Filipom.">
-    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1iuStY2ljPhULgoZQXEHAAYlBAW-3tneg"> 
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/0"> 
     <meta property="og:url" content="https://moveitradio.sk/">
 
     <script type="application/ld+json">
@@ -25,16 +25,27 @@
       "@type": "RadioStation",
       "name": "Moveit Rádio",
       "url": "https://moveitradio.sk/",
-      "logo": "https://lh3.googleusercontent.com/d/1iuStY2ljPhULgoZQXEHAAYlBAW-3tneg",
-      "description": "Slovenská internetová rozhlasová stanica zameraná na tanečnú hudbu a live mixy.",
+      "logo": "https://lh3.googleusercontent.com/d/0",
+      "description": "Slovenská internetová rozhlasová stanica zameraná na tanečnú hudba a live mixy.",
       "sameAs": [
         "https://www.instagram.com/moveitradio_sk",
         "https://www.tiktok.com/@moveitradio_sk"
       ]
     }
     </script>
+
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #6366f1; 
@@ -67,43 +78,18 @@
             overflow-x: hidden;
         }
 
-        /* --- STYLY PRO MENU --- */
         .top-nav {
-            width: 100%;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-glass);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+            width: 100%; background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glass); padding: 15px 20px; position: sticky; top: 0;
+            z-index: 1000; display: flex; justify-content: center; gap: 30px;
         }
 
         .top-nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--text-main); text-decoration: none; font-weight: 700; text-transform: uppercase;
+            font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; display: flex; align-items: center; gap: 8px;
         }
 
-        .top-nav a:hover {
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        .top-nav a i {
-            font-size: 1rem;
-        }
-        /* ---------------------- */
+        .top-nav a:hover { color: var(--secondary); transform: translateY(-2px); }
 
         .bg-animate {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
@@ -151,19 +137,9 @@
         .visualizer-inline { display: inline-flex; gap: 3px; height: 16px; margin-left: 10px; align-items: flex-end; }
         .vis-bar { width: 3px; background: var(--secondary); border-radius: 2px; height: 4px; }
         .playing .vis-bar { animation: barBounce 0.8s infinite alternate; }
-        .playing .vis-bar:nth-child(2) { animation-delay: 0.2s; }
-        .playing .vis-bar:nth-child(3) { animation-delay: 0.4s; }
         @keyframes barBounce { 0% { height: 4px; } 100% { height: 16px; } }
 
         .play-outer { position: relative; width: 120px; height: 120px; margin: 25px auto; }
-        .glow-ring {
-            position: absolute; top: -6px; left: -6px; right: -6px; bottom: -6px; border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
-            opacity: 0; transition: 0.5s;
-        }
-        .playing .glow-ring { opacity: 0.5; animation: spinOrbit 4s linear infinite; filter: blur(10px); }
-        @keyframes spinOrbit { 100% { transform: rotate(360deg); } }
-
         #playBtn {
             width: 100%; height: 100%; border-radius: 50%; border: none;
             background: var(--text-main); color: var(--bg-dark);
@@ -175,10 +151,7 @@
         .vol-wrap:hover { opacity: 1; }
         input[type=range] { flex: 1; cursor: pointer; accent-color: var(--secondary); height: 4px; }
 
-        .grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
-            width: 100%; max-width: 1100px; padding-bottom: 40px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1100px; padding-bottom: 40px; }
         .card { background: var(--glass); border: 1px solid var(--border-glass); padding: 35px; border-radius: 35px; }
         .card h2 { font-size: 1rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; color: var(--secondary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
         .big-text { font-size: 1.6rem; font-weight: 900; display: block; color: var(--text-main); margin: 5px 0; line-height: 1.2; }
@@ -201,14 +174,14 @@
             .main-wrapper { padding: 20px 15px; }
             h1 { font-size: 3.5rem; }
             .player-card { padding: 40px 20px; }
-            .top-nav { gap: 15px; }
+            .theme-toggle { top: 75px; right: 10px; }
         }
     </style>
 </head>
-<body>
+<body id="mainBody">
 
     <nav class="top-nav">
-        <a href="index.html"><i class="fas fa-home"></i> Domov</a>
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Domov</a>
         <a href="dj-filip.html"><i class="fas fa-headphones"></i> DJ Filip</a>
     </nav>
 
@@ -231,7 +204,6 @@
             </div>
 
             <div class="play-outer">
-                <div class="glow-ring"></div>
                 <button id="playBtn" aria-label="Prehrať rádio"><i class="fas fa-play" id="playIcon"></i></button>
             </div>
 
@@ -270,7 +242,7 @@
             <div class="sponsor-card">
                 <h2><i class="fas fa-star"></i> OFICIÁLNY PARTNER</h2>
                 <a href="https://www.print-up.at/" target="_blank">
-                    <img src="https://lh3.googleusercontent.com/d/1eR0l1OLGVqhNxwRYDLMouGSFq1HouRVa" alt="Partner Print-Up.at" class="sponsor-img">
+                    <img src="https://lh3.googleusercontent.com/d/0" alt="Partner Print-Up.at" class="sponsor-img">
                 </a>
             </div>
         </section>
@@ -283,6 +255,7 @@
     <audio id="radioAudio" src="https://stream.zeno.fm/jkrusgbmbtcvv" preload="none"></audio>
 
     <script>
+        const body = document.getElementById('mainBody');
         const audio = document.getElementById('radioAudio');
         const playBtn = document.getElementById('playBtn');
         const playIcon = document.getElementById('playIcon');
@@ -292,20 +265,36 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
-        themeToggle.addEventListener('click', () => {
-            if (document.body.getAttribute('data-theme') === 'light') {
-                document.body.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-            } else {
-                document.body.setAttribute('data-theme', 'light');
+        // --- SYNCHRONIZACE TÉMATU ---
+        function updateThemeUI() {
+            if (body.getAttribute('data-theme') === 'light') {
                 themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
             }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+            updateThemeUI();
         });
 
+        if (localStorage.getItem('theme') === 'light') {
+            body.setAttribute('data-theme', 'light');
+        }
+        updateThemeUI();
+
+        // --- PLAYER LOGIKA ---
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.src = "https://stream.zeno.fm/jkrusgbmbtcvv"; 
-                audio.play().catch(error => console.log("Prehrávanie zlyhalo:", error));
+                audio.play();
                 playIcon.className = 'fas fa-pause';
                 playerContainer.classList.add('playing');
             } else {
@@ -318,6 +307,7 @@
 
         document.getElementById('volume').addEventListener('input', (e) => audio.volume = e.target.value);
 
+        // --- METADATA ---
         let currentFullTitle = "";
         function subscribeToMetadata() {
             const eventSource = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/jkrusgbmbtcvv');
