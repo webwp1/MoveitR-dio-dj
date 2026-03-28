@@ -12,7 +12,6 @@
     <meta property="og:title" content="DJ Filip | Moveit Rádio 2026">
     <meta property="og:description" content="Spoznaj DJ Filipa a jeho svet hudby na Moveit Rádiu.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tvojweb.sk/dj-filip">
     <meta property="og:image" content="https://lh3.googleusercontent.com/d/1iuStY2ljPhULgoZQXEHAAYlBAW-3tneg">
 
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1iuStY2ljPhULgoZQXEHAAYlBAW-3tneg">
@@ -195,8 +194,8 @@
 <body id="mainBody">
 
     <nav class="top-nav">
-        <a href="/"><i class="fas fa-home"></i> Domov</a>
-        <a href="/dj-filip" class="active"><i class="fas fa-headphones"></i> DJ Filip</a>
+        <a href="../index.html"><i class="fas fa-home"></i> Domov</a>
+        <a href="index.html" class="active"><i class="fas fa-headphones"></i> DJ Filip</a>
     </nav>
 
     <div class="bg-animate"></div>
@@ -211,7 +210,7 @@
             <div class="icon-pulse"><i class="fas fa-user-circle"></i></div>
             <h1>DJ FILIP</h1>
             <p class="info-text">Tu budú informácie o mne.</p>
-            <a href="/" class="back-link">Späť na rádio</a>
+            <a href="../index.html" class="back-link">Späť na rádio</a>
         </div>
     </div>
 
@@ -224,7 +223,6 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
-        // Zosynchronizované s hlavnou stránkou (radioTheme)
         function applyTheme(theme) {
             if (theme === 'light') {
                 body.setAttribute('data-theme', 'light');
@@ -244,11 +242,6 @@
             localStorage.setItem('radioTheme', newTheme);
             applyTheme(newTheme);
         });
-
-        // GitHub Clean URL
-        if (window.location.pathname.endsWith('/index.html')) {
-            window.history.replaceState({}, document.title, window.location.pathname.replace('/index.html', '/'));
-        }
     </script>
 </body>
 </html>
