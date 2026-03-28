@@ -274,6 +274,12 @@
     <audio id="radioAudio" preload="none"></audio>
 
     <script>
+        // --- ČISTÁ URL ADRESA PRE GITHUB PAGES ---
+        if (window.location.pathname.endsWith('/index.html')) {
+            const cleanUrl = window.location.pathname.replace('/index.html', '');
+            window.history.replaceState({}, document.title, cleanUrl || '/');
+        }
+
         const audio = document.getElementById('radioAudio');
         const playBtn = document.getElementById('playBtn');
         const playIcon = document.getElementById('playIcon');
@@ -298,7 +304,6 @@
             }
         }
 
-        // Load saved theme
         const savedTheme = localStorage.getItem('radioTheme') || 'dark';
         applyTheme(savedTheme);
 
